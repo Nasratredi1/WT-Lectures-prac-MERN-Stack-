@@ -1,0 +1,15 @@
+{
+    "name": "john-calcuator",
+    "version": "1.0.0",
+    "description": "this is the testing of npm package for first time",
+    "main": "index.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [
+      "calculator"
+    ],
+    "author": "John Redi",
+    "license": "ISC"
+  }
+  
