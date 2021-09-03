@@ -134,17 +134,97 @@
 //  titles[1].textContent = 'world';
 
  // if you want to applay in odd number (1 and 3) li or etc.
- var odd = document.querySelectorAll('li:nth-child(odd)');
+//  var odd = document.querySelectorAll('li:nth-child(odd)');
 
  // to apply on even
- var even = document.querySelectorAll('li:nth-child(even)');
+//  var even = document.querySelectorAll('li:nth-child(even)');
 
 
- for(var i = 0; i < odd.length; i++){
-    odd[i].style.backgroundColor = "#f4f4f4";
-    even[i].style.backgroundColor = "#ccc";
-}
+//  for(var i = 0; i < odd.length; i++){
+//     odd[i].style.backgroundColor = "#f4f4f4";
+//     even[i].style.backgroundColor = "#ccc";
+// }
 
 // this is going be to stop this video.
 
 //  In this video we will learn how to traverse and move around the DOM with properties like parentNode, parentElement, nextElementSibling and so on. We will also learn how to insert elements with createElement() and createTextNode()
+// if we the code of html file there is a div of add items
+// so h2 is the child of div and form is the sibling of h2
+
+// TRAVERSING THE DOM //
+var itemList = document.querySelector ('#items');
+// parentNode
+// console.log(itemList.parentNode);
+// itemList.parentNode.style.backgroundColor = '#f4f4f4';
+// console.log(itemList.parentNode.parentNode.parentNode);
+
+// parentElement
+// console.log(itemList.parentElement);
+// itemList.parentElement.style.backgroundColor = '#f4f4f4';
+// console.log(itemList.parentElement.parentElement.parentElement);
+
+// childNodes
+// console.log (itemList.childNodes);
+
+// so you can used children node with replace of this. so it's better to used this.
+
+// console.log (itemList.children);
+// if you want to access a specific childere like items 2 you can do like this.
+
+// console.log(itemList.children[1]);
+// if you want to give a specific child style
+// itemList.children[1].style.backgroundColor = 'yellow';
+
+//FirstChild 
+// console.log(itemList.firstChild);
+
+// firstElementChild
+// console.log(itemList.firstElementChild);
+// itemList.firstElementChild.textContent = 'Hello 1';
+
+//lastChild 
+// console.log(itemList.lastChild);
+
+// lastElementChild
+// console.log(itemList.lastElementChild);
+// itemList.lastElementChild.textContent = 'Hello 4';
+
+// nextSibling
+// console.log(itemList.nextSibling);
+// nextElementSibling
+// console.log(itemList.nextElementSibling);
+
+// previoussibling
+//  
+// previousElementSibling
+// console.log(itemList.previousElementSibling);
+// itemList.previousElementSibling.style.color = 'green';
+
+// creatElement 
+var newDiv = document.createElement('div');
+// you can make a class and give a na me.
+// add class
+newDiv.className = 'hello';
+
+// add id
+newDiv.id = 'hello1';
+
+// Add attr 
+newDiv.setAttribute('title', 'Hello Div');
+
+//create text node
+var newDivText = document.createTextNode('Hello World');
+
+// Add text to div
+newDiv.appendChild(newDivText);
+
+// How we insert this into  Dom now this only exist within  Javascript.
+
+var container = document.querySelector('header .container');
+var h1 = document.querySelector('header h1');
+
+console.log(newDiv);
+// give font size
+newDiv.style.fontSize = '30px';
+
+container.insertBefore(newDiv, h1);
