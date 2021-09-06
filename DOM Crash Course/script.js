@@ -152,7 +152,7 @@
 // so h2 is the child of div and form is the sibling of h2
 
 // TRAVERSING THE DOM //
-var itemList = document.querySelector ('#items');
+// var itemList = document.querySelector ('#items');
 // parentNode
 // console.log(itemList.parentNode);
 // itemList.parentNode.style.backgroundColor = '#f4f4f4';
@@ -201,30 +201,219 @@ var itemList = document.querySelector ('#items');
 // itemList.previousElementSibling.style.color = 'green';
 
 // creatElement 
-var newDiv = document.createElement('div');
+// var newDiv = document.createElement('div');
 // you can make a class and give a na me.
 // add class
-newDiv.className = 'hello';
+// newDiv.className = 'hello';
 
 // add id
-newDiv.id = 'hello1';
+// newDiv.id = 'hello1';
 
 // Add attr 
-newDiv.setAttribute('title', 'Hello Div');
+// newDiv.setAttribute('title', 'Hello Div');
 
 //create text node
-var newDivText = document.createTextNode('Hello World');
+// var newDivText = document.createTextNode('Hello World');
 
 // Add text to div
-newDiv.appendChild(newDivText);
+// newDiv.appendChild(newDivText);
 
 // How we insert this into  Dom now this only exist within  Javascript.
 
-var container = document.querySelector('header .container');
-var h1 = document.querySelector('header h1');
+// var container = document.querySelector('header .container');
+// var h1 = document.querySelector('header h1');
 
-console.log(newDiv);
-// give font size
-newDiv.style.fontSize = '30px';
+// console.log(newDiv);
+// // give font size
+// newDiv.style.fontSize = '30px';
 
-container.insertBefore(newDiv, h1);
+// container.insertBefore(newDiv, h1);
+
+// part 2 finish part 3 is started.
+
+//In this lesson in the JavaScript DOM, we will be looking at different events and how to attach them to DOM elements with addEventListener();
+
+// EVENTS.
+
+// You can do like this 
+// var button = document.getElementById('button').addEventListener('click', function(){
+//     console.log(123);
+// });
+
+//or you can call to a function 
+// var button = document.getElementById('button').addEventListener('click', buttonClick);
+   
+// function buttonClick(){
+//    console.log('Button Clicked');
+// }
+   //or you can used the above like we studied in priveious two videos. when you click to button they
+//    function buttonClick(){
+//     document.getElementById('header-title').textContent = 'changed';
+//     document.querySelector('#main').style.backgroundColor = '#f4f4f4';
+//  }
+   
+// function buttonClick(e){
+    // console.log(e);
+    // console.log(e.target);
+    // if we want to get required id
+    // console.log(e.target.id);
+    // console.log(e.target.className);
+    
+    // if we want to get classlist(DOMTokenList) like array.
+    // console.log(e.target.classList);
+
+    // var output = document.getElementById('output');
+    // cancatenation they show your id in your Html page.
+    // output.innerHTML = '<h3>'+e.target.id+'</h3>'
+    
+    // console.log(e.type);
+     // position of the mouse in windows.
+    // console.log(e.clientX);
+    // console.log(e.clientX);
+    
+
+    // Mouse position from actual element.
+    //console.log(e.offsetX);
+    //console.log(e.offsetY);
+
+    // now check the key.
+    // console.log(e.altKey);
+    // console.log(e.ctrKey);
+    // console.log(e.shiftKey);
+    
+// }
+
+// var button = document.getElementById('button').addEventListener('click', runEvent);
+
+// function runEvent (e){
+//     console.log('EVENT TYPE: '+e.type);
+// }
+
+// Above three line of code we can write like this. only add button. 
+
+// var button = document.getElementById('button');
+// button.addEventListener('click', runEvent);
+
+// function runEvent (e){
+//     console.log('EVENT TYPE: '+e.type);
+// }
+
+// doble click when you click twice on button then they show this event type
+// var button = document.getElementById('button')
+//button.addEventListener('dblclick', runEvent);
+// when you click down on button then they show the type of event in console.
+//button.addEventListener('mousedown', runEvent);
+// mouseUp events.
+// button.addEventListener('mouseup', runEvent);
+
+// function runEvent (e){
+//     console.log('EVENT TYPE: '+e.type);
+// }
+
+
+
+// var button = document.getElementById('button')
+// var box = document.getElementById('box');
+
+//box.addEventListener('mouseenter',runEvent);
+// mouseleave event.
+//box.addEventListener('mouseleave',runEvent);
+
+// over for any inner elements
+//box.addEventListener('mouseover',runEvent);
+// when we go to hello and then lefe on that time this event fire.
+// box.addEventListener('mouseout',runEvent);
+
+//box.addEventListener('mousemove',runEvent);
+
+// var itemInput = document.querySelector('input[type="text"]');
+// var form = document.querySelector('form');
+
+
+
+
+// function runEvent (e){
+//     console.log('EVENT TYPE: '+e.type);
+
+   // output.innerHTML = '<h3>MouseX: '+e.offsetX+'</h3><h3>MouseY: '+e.offsetY+'</h3>';
+     // when you hover the mouse then they change the color of it.
+    //box.style.backgroundColor = "rgb("+e.offsetX+","+e.offsetY+",40)";
+    // or you can change the syle of the body.
+    //document.body.style.backgroundColor = "rgb("+e.offsetX+","+e.offsetY+",40)";
+//}
+
+
+
+
+// var button = document.getElementById('button')
+// var box = document.getElementById('box');
+
+// var itemInput = document.querySelector('input[type="text"]');
+// var form = document.querySelector('form');
+
+// itemInput.addEventListener('keydown', runEvent);
+// itemInput.addEventListener('keyup', runEvent);
+//itemInput.addEventListener('keypress', runEvent);
+// focus when you click that fire
+//itemInput.addEventListener('focus', runEvent);
+
+// blur when you click outside this fire.
+//itemInput.addEventListener('blur', runEvent);
+
+// cut and paste event.
+
+// itemInput.addEventListener('cut', runEvent);
+// itemInput.addEventListener('paste', runEvent);
+
+// input event. when you write anything in button box they fired each time.
+// itemInput.addEventListener('input', runEvent);
+
+
+
+
+// function runEvent (e){
+//     console.log('EVENT TYPE: '+e.type);
+
+    // everything is removed when you write sth and then cut it.
+    // document.body.style.display = 'none';
+
+    // if you want to catch which thing you write on on input catch in console. 
+   //console.log(e.target.value);
+
+    // directly get which things you write.
+
+   // document.getElementById('output').innerHTML = '<h3>'+e.target.value+'</h3>';
+
+//}
+
+// change event
+// above repeated code.
+var button = document.getElementById('button')
+var box = document.getElementById('box');
+
+var itemInput = document.querySelector('input[type="text"]');
+var form = document.querySelector('form');
+var select = document.querySelector('select');
+
+//select.addEventListener('change', runEvent);
+// we can pass input as well
+//select.addEventListener('input', runEvent);
+
+// now if we listen to submit there is not something happen for this then we call to a function e.preventDefault .
+form.addEventListener('submit', runEvent);
+
+
+
+
+
+function runEvent (e){
+    e.preventDefault();
+    console.log('EVENT TYPE: '+e.type);
+ // if you to get a value.
+ //console.log(e.target.value);
+
+}
+
+/* video 3 is finished
+video 4 about and last video
+In this video we will take what we learned in the last 3 videos and create a simple Item lister project where we can add list items with a form, delete them and filter through them all with vanilla JavaScript and DOM properties and methods.
