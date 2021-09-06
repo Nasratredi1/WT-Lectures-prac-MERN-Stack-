@@ -388,32 +388,135 @@
 
 // change event
 // above repeated code.
-var button = document.getElementById('button')
-var box = document.getElementById('box');
+// var button = document.getElementById('button')
+// var box = document.getElementById('box');
 
-var itemInput = document.querySelector('input[type="text"]');
-var form = document.querySelector('form');
-var select = document.querySelector('select');
+// var itemInput = document.querySelector('input[type="text"]');
+// var form = document.querySelector('form');
+// var select = document.querySelector('select');
 
 //select.addEventListener('change', runEvent);
 // we can pass input as well
 //select.addEventListener('input', runEvent);
 
 // now if we listen to submit there is not something happen for this then we call to a function e.preventDefault .
-form.addEventListener('submit', runEvent);
+//form.addEventListener('submit', runEvent);
 
 
 
 
 
-function runEvent (e){
-    e.preventDefault();
-    console.log('EVENT TYPE: '+e.type);
+// function runEvent (e){
+//     e.preventDefault();
+//     console.log('EVENT TYPE: '+e.type);
  // if you to get a value.
  //console.log(e.target.value);
 
-}
+//}
 
 /* video 3 is finished
 video 4 about and last video
 In this video we will take what we learned in the last 3 videos and create a simple Item lister project where we can add list items with a form, delete them and filter through them all with vanilla JavaScript and DOM properties and methods.
+*/ 
+
+// in this vide when we write something in box of input they add to page and also add del btn on r.h.s.. 
+// and how to remove it  and also after 15 min how to filter it.
+
+
+
+var form = document.getElementById('addForm');
+var itemList = document.getElementById('items');
+var filter = document.getElementById('filter');
+
+//form submit event
+form.addEventListener('submit', addItem);
+
+// Delete Event
+itemList.addEventListener('click', removeItem);
+
+// Filter Event
+filter.addEventListener('keyup',filterItems);
+
+//Add item
+function addItem(e){
+    e.preventDefault();
+
+    // console.log(1);
+
+    // gET input value
+    var newItem = document.getElementById('item').value;
+
+    // create new li element
+    var li = document.createElement('li');
+
+    //add class Name
+    li.className = 'list-group-item';
+    // console.log(li);
+
+    //Add text node with input value
+    li.appendChild(document.createTextNode(newItem));
+    
+    // append li to list
+    itemList.appendChild(li);
+   
+    // Now if we check it there is no Delete button for this
+
+    // Create del button element
+    var deleteBtn = document.createElement('button');
+
+    // Add classes to del button
+    deleteBtn.className = 'btn btn-danger btn-sm float-right delete';
+
+    // Append text node 
+    deleteBtn.appendChild (document.createTextNode('X'));
+
+    // Append button to li
+    li.appendChild(deleteBtn);
+}
+
+// Remove Item fun
+function removeItem(e){
+    // for chacking when we click in any place then they fire we don't want like that we want when we only click on red button.
+   //console.log(1);
+
+   // now when we click on red button then fires 
+   //    if(e.target.classList.contains('delete')){
+   //        console.log(1);
+   //    }
+   // above code is repeat
+
+   if(e.target.classList.contains('delete')){
+       if(confirm('Are You Sure?')){
+           var li = e.target.parentElement; // PE is li
+           itemList.removeChild(li);
+       }
+     
+    }    
+}
+
+
+// Filter Items
+function filterItems(e){
+    // convert text to lowercase
+    var text = e.target.value.toLowerCase();
+    // for chacking
+    //console.log(text);
+
+    // Get lis
+    var items = itemList.getElementsByTagName('li');
+    // if we chack this they give us HTMLCOLLECTION for solving we conver to an array.
+    //console.log(items);
+
+    //convert to an array
+    Array.from(items).forEach(function(item){
+        var itemName = item.firstChild.textContent;
+       // console.log(itemName);
+       if(itemName.toLowerCase().indexOf(text) != -1){ // mean if that's match
+        item.style.display = 'block';
+      } else {
+          item.style.display = 'none';// if you serch char like D if that not match then everything removes. b/c display set to none.  or if you serach item 3 only that show other is removed.
+      }
+    }); 
+
+}
+
