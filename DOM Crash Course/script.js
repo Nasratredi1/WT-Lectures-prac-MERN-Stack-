@@ -84,8 +84,8 @@
 // console.log(li);
 // console.log(items[1]);
 // li[1].textContent = 'Hello 2';
-// li[1].style.fontWeight = 'bold';
-// li[1].style.backgroundColor = 'yellow';
+// li[2].style.fontWeight = 'bold';
+// li[3].style.backgroundColor = 'yellow';
 
 // // Gives error
 // //items.style.backgroundColor = '#f4f4f4';
@@ -435,7 +435,7 @@ form.addEventListener('submit', addItem);
 itemList.addEventListener('click', removeItem);
 
 // Filter Event
-filter.addEventListener('keyup',filterItems);
+filter.addEventListener('keyup',filterItems); 
 
 //Add item
 function addItem(e){
